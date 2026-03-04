@@ -2,5 +2,5 @@
 #include "hello.h"
 
 TEST(HelloTest, ReturnsCorrectString) {
-    EXPECT_EQ(hello(), "Hello world");
+    EXPECT_EQ(hello(), "Hello world CI");
 }
