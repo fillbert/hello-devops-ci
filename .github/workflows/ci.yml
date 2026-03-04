@@ -50,6 +50,7 @@ jobs:
         gcovr -r . \
               --filter lib \
               --exclude build \
+              --xml -o coverage.xml \
               --html \
               --html-details \
               -o coverage.html \
@@ -61,3 +62,9 @@ jobs:
       with:
         name: coverage-report
         path: coverage.html
+    - name: Upload coverage xml
+      if: matrix.compiler == 'gcc'
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-xml
+        path: coverage.xml
