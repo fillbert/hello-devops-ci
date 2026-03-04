@@ -1,10 +1,10 @@
-Start testing: Mar 04 17:23 CET
+Start testing: Mar 04 17:27 CET
 ----------------------------------------------------------
 1/1 Testing: HelloTest.ReturnsCorrectString
 1/1 Test: HelloTest.ReturnsCorrectString
 Command: "/home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/tests/hello_tests" "--gtest_filter=HelloTest.ReturnsCorrectString" "--gtest_also_run_disabled_tests"
 Directory: /home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/tests
-"HelloTest.ReturnsCorrectString" start time: Mar 04 17:23 CET
+"HelloTest.ReturnsCorrectString" start time: Mar 04 17:27 CET
 Output:
 ----------------------------------------------------------
 Running main() from /home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,8 +23,8 @@ Note: Google Test filter = HelloTest.ReturnsCorrectString
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HelloTest.ReturnsCorrectString" end time: Mar 04 17:23 CET
+"HelloTest.ReturnsCorrectString" end time: Mar 04 17:27 CET
 "HelloTest.ReturnsCorrectString" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Mar 04 17:23 CET
+End testing: Mar 04 17:27 CET
