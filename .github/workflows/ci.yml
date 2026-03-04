@@ -29,3 +29,17 @@ jobs:
       run: |
         cd build
         ctest --output-on-failure
+    - name: Generate coverage report
+      run: |
+        gcovr -r . \
+              --filter lib \
+              --exclude build \
+              --html \
+              --html-details \
+              -o coverage.html \
+              --print-summary
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: coverage.html
