@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        compiler: [gcc, clang]
+
     steps:
 
     - name: Checkout
@@ -17,9 +21,19 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y cmake g++ gcovr
+        sudo apt-get install -y cmake gcovr gcc g++ clang
 
-    - name: Configure
+    - name: Configure compiler
+      run: |
+        if [ "${{ matrix.compiler }}" = "gcc" ]; then
+          echo "CC=gcc" >> $GITHUB_ENV
+          echo "CXX=g++" >> $GITHUB_ENV
+        else
+          echo "CC=clang" >> $GITHUB_ENV
+          echo "CXX=clang++" >> $GITHUB_ENV
+        fi
+
+    - name: Configure CMake
       run: cmake -B build
 
     - name: Build
@@ -29,7 +43,9 @@ jobs:
       run: |
         cd build
         ctest --output-on-failure
+
     - name: Generate coverage report
+      if: matrix.compiler == 'gcc'
       run: |
         gcovr -r . \
               --filter lib \
@@ -38,7 +54,9 @@ jobs:
               --html-details \
               -o coverage.html \
               --print-summary
+
     - name: Upload coverage report
+      if: matrix.compiler == 'gcc'
       uses: actions/upload-artifact@v4
       with:
         name: coverage-report
