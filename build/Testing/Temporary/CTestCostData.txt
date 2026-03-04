@@ -1,2 +1,0 @@
-HelloTest.ReturnsCorrectString 2 0.000603765
----

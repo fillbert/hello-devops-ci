@@ -1,5 +1,0 @@
-if(EXISTS "/home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/tests/hello_tests[1]_tests.cmake")
-  include("/home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/tests/hello_tests[1]_tests.cmake")
-else()
-  add_test(hello_tests_NOT_BUILT hello_tests_NOT_BUILT)
-endif()

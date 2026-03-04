@@ -1,3 +1,0 @@
-/home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-/home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/vlad/WorkNew/Git_CICD/hello-devops-ci/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
