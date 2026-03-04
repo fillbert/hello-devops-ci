@@ -1,0 +1,88 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "cmake: clean",
+			"type": "process",
+			"command": "cmake",
+			"args": [
+				"-E", "rm", "-rf", "build"
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "cmake: configure (x86)",
+			"type": "process",
+			"command": "cmake",
+			"windows": {
+				"args": [
+					"-B", "build",
+					"-G", "MinGW Makefiles",
+					"-DBOARD=x86_win32",
+					"-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+				]
+			},
+			"linux": {
+				"args": [
+					"-B", "build",
+					"-DBOARD=x86_linux",
+					"-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+				]
+			},
+			//"dependsOn": ["cmake: clean"],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "cmake: build",
+			"type": "process",
+			"command": "cmake",
+			"args": [
+				"--build", "build",
+				"-j8",
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "cmake: menuconfig",
+			"type": "process",
+			"command": "cmake",
+			"args": [
+					"--build", "./build",
+					"--target", "menuconfig"
+			],
+			"problemMatcher": [],
+			"group": {
+					"kind": "build",
+					"isDefault": true
+			}
+		},
+		{
+			"label": "cmake: guiconfig",
+			"type": "process",
+			"command": "cmake",
+			"args": [
+					"--build", "./build",
+					"--target", "guiconfig"
+			],
+			"problemMatcher": [],
+			"group": {
+					"kind": "build",
+					"isDefault": true
+			}
+		},
+	]
+}

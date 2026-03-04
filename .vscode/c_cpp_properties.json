@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x86",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "compilerPath": "C:/msys2_64/mingw32/bin/g++.exe"
+        }
+    ],
+    "version": 4
+}
+

@@ -1,0 +1,80 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "gdb: FDCM_Blaster (x86)",
+			"type": "cppdbg",
+			"request": "launch",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"windows": {
+				"miDebuggerPath": "c:\\msys64\\mingw32\\bin\\gdb.exe",
+				"program": "${workspaceFolder}/build/FDCM_Blaster.exe"
+			},
+			"linux": {
+				"program": "${workspaceFolder}/build/FDCM_Blaster"
+			},
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "cmake: build"
+		},
+		{
+			"type": "lua",
+			"request": "launch",
+			"name": "Debug LUA another",
+			"console": "integratedTerminal",
+			"luaVersion": "lua-latest",
+			"program": "${workspaceFolder}/luaScripts/message.lua",
+			"arg": ["Hello World"],
+			"path": "${workspaceFolder}/luaScripts",
+		},
+		{
+			"type": "lua",
+			"request": "launch",
+			"name": "Debug LUA my",
+			"program": "${workspaceFolder}/luaScripts/message.lua"
+		},
+		{
+            "name": "Python: SFTP",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/sftp/sftp.py",
+            "console": "integratedTerminal",
+            "args": [
+            ],
+            "justMyCode": true
+        },
+		{
+            "name": "Python: SFTP-server",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/sftp/test_server.py",
+            "console": "integratedTerminal",
+            "args": [
+            ],
+            "justMyCode": true
+        },
+		{
+            "name": "Python: SFTP-client",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/sftp/test_client.py",
+            "console": "integratedTerminal",
+            "args": [
+            ],
+            "justMyCode": true
+        },
+	]
+}
